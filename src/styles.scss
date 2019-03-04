@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@font-face {
+    font-family: 'TitilliumWeb';
+    src: url('assets/fonts/Titillium_Web/TitilliumWeb-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'TitilliumWeb-Bold';
+    src: url('assets/fonts/Titillium_Web/TitilliumWeb-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'TitilliumWeb-Light';
+    src: url('assets/fonts/Titillium_Web/TitilliumWeb-Light.ttf');
+}
+
+@font-face {
+    font-family: 'TitilliumWeb-SemiBold';
+    src: url('assets/fonts/Titillium_Web/TitilliumWeb-SemiBold.ttf');
+}
+
+body {
+    font-family: 'TitilliumWeb', 'sans-serif' !important;
+    margin: 0;
+}
+
+.body-wrapper {
+    margin-top: 80px;
+}
+
+ul {
+    list-style-type: none;
+}

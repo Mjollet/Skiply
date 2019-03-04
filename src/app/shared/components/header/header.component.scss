@@ -1,0 +1,21 @@
+h1 {
+    text-align: center;
+    color: pink;
+}
+
+.mat-toolbar h1 {
+    font-family: 'TitilliumWeb', 'sans-serif' !important;
+}
+
+.mat-toolbar {
+    position: fixed;
+    top: 0;
+}
+
+.header-wrapper {
+    width: 100%;
+}
+
+.mat-button {
+    position: absolute;
+}
