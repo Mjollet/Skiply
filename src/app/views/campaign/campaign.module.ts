@@ -3,9 +3,11 @@ import { CommonModule } from '@angular/common';
 
 import { CampaignRoutingModule } from './campaign-routing.module';
 import { PeriodComponent } from './period/period.component';
+import { BoitierComponent } from './boitier/boitier.component';
+import { QuestionComponent } from './question/question.component';
 
 @NgModule({
-  declarations: [PeriodComponent],
+  declarations: [PeriodComponent, BoitierComponent, QuestionComponent],
   imports: [
     CommonModule,
     CampaignRoutingModule
