@@ -1,16 +1,12 @@
-<mat-drawer-container class="sidebar">
-  <mat-drawer mode="side" opened>Menu
-    <ul class="list">
-      <li>
-        <button mat-menu-item routerLink='/campaign'>Campaign</button>
-      </li>
-      <li>
-        <button mat-menu-item routerLink=''>Analyse</button>
-      </li>
-      <li>
-        <button mat-menu-item routerLink=''>Battery</button>
-      </li>
-    </ul>
-  </mat-drawer>
+<div>
+  <div class="sidenav">
+    <a routerLinkActive="bg-light" routerLink="/home" class="font-weight-bold">Dashboard</a>
+    <a routerLinkActive="bg-light" routerLink="/result">Search</a>
 
-</mat-drawer-container>
+    <!-- <a routerLinkActive="bg-light" routerLink="/occupancy">Occupancy</a>
+        <a routerLinkActive="bg-light" routerLink="/ambience">Ambience</a>
+        <a routerLinkActive="bg-light" routerLink="/satisfaction">Satisfaction</a>
+        <a routerLinkActive="bg-light" routerLink="/energy">Energy</a>
+        <a routerLinkActive="bg-light" routerLink="/finance">Finance</a> -->
+  </div>
+</div>
