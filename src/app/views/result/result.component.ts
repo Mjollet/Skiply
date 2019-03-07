@@ -19,12 +19,11 @@ export class ResultComponent implements OnInit {
         datasets: [{
           data: [5, 3, 2],
           backgroundColor: ['rgba(73,232,62, 1)', 'rgba(248, 240, 89, 1)', 'rgba(246, 35, 35, 1)'],
-          /* borderColor: ['rgba(73,232,62, 1)'],*/
           label: 'BUMS/J'
         }]
       },
     });
-    // this.generateChart();
+
   }
 
 

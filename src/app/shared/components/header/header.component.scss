@@ -1,6 +1,17 @@
-h1 {
+.header-title {
     text-align: center;
+    margin-left: 160px;
+    /*margin-top: 100px;*/
     color: #3aa7db;
+}
+
+@media screen and (max-width:575px) {
+    .header-title {
+        margin-left: 0px;
+    }
+    .burger {
+        margin-left: 0px;
+    }
 }
 
 .mat-toolbar h1 {

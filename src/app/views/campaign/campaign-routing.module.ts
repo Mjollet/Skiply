@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { PeriodComponent } from './period/period.component';
+import { CampaignComponent } from './campaign/campaign.component';
 
 const routes: Routes = [
-  { path: '', component: PeriodComponent }
+  { path: '', component: CampaignComponent }
 ];
 
 @NgModule({

@@ -29,3 +29,9 @@ p {
     margin-left: 15px;
     font-size: 0.9em;
 }
+
+@media screen and (max-width:575px) {
+    .sidenav {
+        display: none;
+    }
+}
