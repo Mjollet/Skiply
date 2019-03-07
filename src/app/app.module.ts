@@ -13,7 +13,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { ResultComponent } from './views/result/result.component';
 
 
 @NgModule({
@@ -21,7 +20,6 @@ import { ResultComponent } from './views/result/result.component';
     AppComponent,
     HeaderComponent,
     SidebarComponent,
-    ResultComponent
   ],
   imports: [
     BrowserModule,
