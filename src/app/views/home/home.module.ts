@@ -4,18 +4,24 @@ import { CommonModule } from '@angular/common';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home/home.component';
 import {
-  MatDatepickerModule, MatFormFieldModule, MatNativeDateModule
+  MatDatepickerModule, MatFormFieldModule, MatNativeDateModule, MatAutocompleteModule, MatInputModule
 } from '@angular/material';
+import { AutocompleteComponent } from './autocomplete/autocomplete.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
-  declarations: [HomeComponent],
+  declarations: [HomeComponent, AutocompleteComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,
     MatDatepickerModule,
     MatFormFieldModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatAutocompleteModule,
+    MatInputModule
   ],
   providers: [
     MatDatepickerModule

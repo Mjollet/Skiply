@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterContentInit } from '@angular/core';
 import Chart from 'chart.js';
 
 @Component({
@@ -7,12 +7,13 @@ import Chart from 'chart.js';
   styleUrls: ['./result.component.scss']
 })
 export class ResultComponent implements OnInit {
-  chartTmp = [];
+  chartTmp1 = [];
+  chartTmp2 = [];
   constructor() { }
 
   ngOnInit() {
 
-    this.chartTmp = new Chart(document.getElementById('myChart'), {
+    this.chartTmp1 = new Chart(document.getElementById('myChart'), {
       type: 'pie',
       data: {
         labels: ['Satisfied', 'Don\'t care', 'Dissatisfied'],
@@ -24,7 +25,59 @@ export class ResultComponent implements OnInit {
       },
     });
 
+
+
+    this.chartTmp2 = new Chart(document.getElementById('chart'), {
+      type: 'line',
+      data: {
+        labels: ['janvier', 'fevrier', 'mars', 'avril'],
+        datasets: [{
+          label: 'Satisfied',
+          data: [12, 23, 42, 12],
+          backgroundColor: 'rgba(1, 22, 64, 0.05)',
+          borderColor: 'rgba(73,232,62, 1)',
+          borderWidth: 1
+
+        }, {
+          label: 'Don\'t care',
+          data: [55, 120, 75, 42],
+          backgroundColor: 'rgba(1, 22, 64, 0.05)',
+          borderColor: 'rgba(248, 240, 89, 1)',
+          borderWidth: 1
+
+        }, {
+          label: 'Dissatisfied',
+          data: [22, 233, 52, 72],
+          backgroundColor: 'rgba(1, 22, 64, 0.05)',
+          borderColor: 'rgba(246, 35, 35, 1)',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          // xAxes: [{
+          //   type: 'time',
+          //   time: {
+          //     displayFormats: {
+          //       quarter: 'h:mm a',
+          //     }
+          //   }
+          // }],
+
+          yAxes: [{
+            ticks: {
+              beginAtZero: true,
+            }
+          }]
+        },
+        tooltips: {
+          mode: 'index',
+          intersect: false
+        }
+      }
+    });
   }
 
 
 }
+

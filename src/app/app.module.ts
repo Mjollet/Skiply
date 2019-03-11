@@ -14,8 +14,6 @@ import { MatMenuModule } from '@angular/material/menu';
 import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatFormFieldModule } from '@angular/material/form-field';
-
 
 @NgModule({
   declarations: [
@@ -32,8 +30,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatIconModule,
     MatMenuModule,
     MatSidenavModule,
-    MatDatepickerModule,
-    MatFormFieldModule
+    MatDatepickerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
