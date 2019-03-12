@@ -1,5 +1,121 @@
-<mat-form-field>
-  <input matInput [matDatepicker]="picker" placeholder="Choose a date">
-  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-  <mat-datepicker #picker></mat-datepicker>
-</mat-form-field>
+<div class="contener">
+
+  <h1> Define your new campaign : </h1>
+
+  <!-- <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+    {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
+  </button> -->
+  <mat-vertical-stepper *ngIf="!isNext" [linear]="isLinear" #stepper>
+
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Fill out your campaign name</ng-template>
+        <mat-form-field>
+          <input matInput placeholder="Campaign Name" formControlName="firstCtrl" required>
+        </mat-form-field>
+
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+
+      </form>
+    </mat-step>
+
+    <mat-step [stepControl]="secondFormGroup">
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>Fill out the period</ng-template>
+
+        <mat-form-field>
+          <input formControlName="calendar1" required matInput [matDatepicker]="picker1" placeholder="Start date">
+          <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+        <div class="spacer"></div>
+
+        <mat-form-field>
+          <input formControlName="calendar2" required matInput [matDatepicker]="picker2" placeholder="End date">
+          <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+          <mat-datepicker #picker2></mat-datepicker>
+        </mat-form-field>
+
+        <!-- <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div> -->
+
+      </form>
+    </mat-step>
+
+    <mat-step [stepControl]="thirdFormGroup">
+      <form [formGroup]="thirdFormGroup">
+        <ng-template matStepLabel>Define the kind of sensor</ng-template>
+        <!-- <mat-checkbox>three answers box</mat-checkbox>
+        <mat-checkbox style="margin-left: 100px;">five answers box</mat-checkbox> -->
+
+        <mat-radio-group>
+          <mat-radio-button value="1">three answers box</mat-radio-button>
+
+          <div class="spacer"></div>
+
+          <mat-radio-button value="2">five answers box</mat-radio-button>
+        </mat-radio-group>
+
+      </form>
+    </mat-step>
+
+    <mat-step [stepControl]="fourthFormGroup">
+      <form [formGroup]="fourthFormGroup">
+        <ng-template matStepLabel>Fill out the possible responses</ng-template>
+
+        <mat-form-field class="full-width-input">
+          <input matInput placeholder="response 1" formControlName="response1" required></mat-form-field>
+
+        <mat-form-field class="full-width-input">
+          <input matInput placeholder="response 2" formControlName="response2" required> </mat-form-field>
+
+        <mat-form-field class="full-width-input">
+          <input matInput placeholder="response 3" formControlName="response3" required></mat-form-field>
+
+        <mat-form-field class="full-width-input">
+          <input matInput placeholder="response 4" formControlName="response4" required></mat-form-field>
+
+        <mat-form-field class="full-width-input">
+          <input matInput placeholder="response 5" formControlName="response5" required></mat-form-field>
+
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+
+      </form>
+    </mat-step>
+
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      You are now done.
+      <br>
+      <br>
+
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="stepper.reset()">Reset</button>
+      </div>
+
+      <br>
+      <br>
+      <br>
+
+      <div>
+        <button mat-button matStepperNext (click)="submit()">Next</button>
+      </div>
+
+    </mat-step>
+  </mat-vertical-stepper>
+
+
+
+
+</div>
+
+<div *ngIf="isNext">
+  ToTO
+</div>

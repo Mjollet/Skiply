@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { CampaignComponent } from './campaign/campaign.component';
 
 const routes: Routes = [
-  { path: '', component: CampaignComponent }
+  { path: '', component: CampaignComponent, pathMatch: 'full' }
 ];
 
 @NgModule({
@@ -11,3 +11,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class CampaignRoutingModule { }
+
+

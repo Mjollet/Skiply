@@ -7,23 +7,24 @@
 
   <h2>Welcome to skiply everybody! </h2>
 
-  <ul>
-    <li>
-      <h2><a routerLink='/campaign'>Campaign</a></h2>
-    </li>
-    <li>
-      <h2><a routerLink='/result'>Result</a></h2>
-    </li>
 
-  </ul>
-
-  <!-- Pick a date  -->
-  <input matInput [matDatepicker]="picker" placeholder="Choose a date">
-  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-  <mat-datepicker #picker></mat-datepicker>
 
   <!-- Choose a campaign -->
 
   <app-autocomplete> Pick a campaign </app-autocomplete>
+
+
+  <ul>
+    <li>
+      <h2><a routerLink='/campaign'>Create a new campaign</a></h2>
+    </li>
+    <li>
+      <h2><a routerLink='/result'>Get your result</a></h2>
+    </li>
+    <li>
+      <h2><a routerLink='/battery'>Battery statement</a></h2>
+    </li>
+
+  </ul>
 
 </div>

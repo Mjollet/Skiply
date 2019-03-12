@@ -9,7 +9,7 @@ import { FormControl } from '@angular/forms';
 export class AutocompleteComponent implements OnInit {
 
   myControl = new FormControl();
-  options: string[] = ['Campaign I', 'Campaign II', 'Campaign III', 'Campaign IV'];
+  options: string[] = ['Campaign 1.0', 'Campaign 1.1', 'Campaign 2.0', 'Campaign 3.0'];
 
   constructor() { }
 
