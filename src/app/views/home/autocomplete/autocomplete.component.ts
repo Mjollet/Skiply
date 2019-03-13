@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { Options } from 'selenium-webdriver';
 
 @Component({
   selector: 'app-autocomplete',
@@ -10,6 +11,12 @@ export class AutocompleteComponent implements OnInit {
 
   myControl = new FormControl();
   options: string[] = ['Campaign 1.0', 'Campaign 1.1', 'Campaign 2.0', 'Campaign 3.0'];
+
+  selectedCampaign: Options;
+  onSelect(option: Options): void {
+    this.selectedCampaign = option;
+  }
+
 
   constructor() { }
 
