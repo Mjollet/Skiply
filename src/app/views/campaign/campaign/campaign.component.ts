@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDatepickerModule } from '@angular/material';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+
 @Component({
   selector: 'app-campaign',
   templateUrl: './campaign.component.html',
@@ -16,6 +17,8 @@ export class CampaignComponent implements OnInit {
   secondFormGroup: FormGroup;
   thirdFormGroup: FormGroup;
   fourthFormGroup: FormGroup;
+  FormGroupA: FormGroup;
+
 
   isNext: boolean;
 
@@ -26,10 +29,6 @@ export class CampaignComponent implements OnInit {
 
     this.firstFormGroup = this._formBuilder.group({
       firstCtrl: ['', Validators.required]
-    });
-    this.secondFormGroup = this._formBuilder.group({
-      calendar1: ['', Validators.required],
-      calendar2: ['', Validators.required]
     });
     this.thirdFormGroup = this._formBuilder.group({
       sensor: ['', Validators.required]
@@ -42,28 +41,29 @@ export class CampaignComponent implements OnInit {
       response5: ['', Validators]
     });
 
-
+    this.FormGroupA = this._formBuilder.group({
+      calendar1: ['', Validators.required],
+      calendar2: ['', Validators.required]
+    });
 
   }
 
   submit() {
     if (this.firstFormGroup.valid) {
-      if (this.secondFormGroup) {
-        if (this.thirdFormGroup) {
-          if (this.fourthFormGroup) {
-            this.isNext = true;
-          } else {
-            console.log('fourthFormGroup not valid');
-          }
+      if (this.thirdFormGroup) {
+        if (this.fourthFormGroup) {
+          this.isNext = true;
         } else {
-          console.log('thirdFormGroup not valid');
+          console.log('fourthFormGroup not valid');
         }
       } else {
-        console.log('secondFormGroup not valid');
+        console.log('thirdFormGroup not valid');
       }
     } else {
       console.log('firstFormGroup not valid');
     }
   }
+
+
 
 }
