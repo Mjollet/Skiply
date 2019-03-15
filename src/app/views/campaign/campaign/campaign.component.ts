@@ -28,20 +28,16 @@ export class CampaignComponent implements OnInit {
     this.isNext = false;
 
     this.firstFormGroup = this._formBuilder.group({
-      firstCtrl: ['', Validators.required]
-    });
-    this.thirdFormGroup = this._formBuilder.group({
-      sensor: ['', Validators.required]
-    });
-    this.fourthFormGroup = this._formBuilder.group({
+      firstCtrl: ['', Validators.required],
+
+      sensor: ['', Validators.required],
+
       response1: ['', Validators.required],
       response2: ['', Validators.required],
       response3: ['', Validators.required],
       response4: ['', Validators],
-      response5: ['', Validators]
-    });
+      response5: ['', Validators],
 
-    this.FormGroupA = this._formBuilder.group({
       calendar1: ['', Validators.required],
       calendar2: ['', Validators.required]
     });
@@ -50,20 +46,14 @@ export class CampaignComponent implements OnInit {
 
   submit() {
     if (this.firstFormGroup.valid) {
-      if (this.thirdFormGroup) {
-        if (this.fourthFormGroup) {
-          this.isNext = true;
-        } else {
-          console.log('fourthFormGroup not valid');
-        }
-      } else {
-        console.log('thirdFormGroup not valid');
-      }
+
+      this.isNext = true;
+
     } else {
       console.log('firstFormGroup not valid');
     }
+
   }
 
-
-
 }
+

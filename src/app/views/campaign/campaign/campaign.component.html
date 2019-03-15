@@ -2,90 +2,58 @@
 
   <h1> Define your new campaign </h1>
 
-  <!-- <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
-    {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
-  </button> -->
-  <mat-vertical-stepper *ngIf="!isNext" [linear]="isLinear" #stepper>
+  <form [formGroup]="firstFormGroup">
+    <ng-template>Fill out your campaign name</ng-template>
+    <mat-form-field>
+      <input matInput placeholder="Campaign Name" formControlName="firstCtrl" required>
+    </mat-form-field>
 
-    <mat-step [stepControl]="firstFormGroup">
-      <form [formGroup]="firstFormGroup">
-        <ng-template matStepLabel>Fill out your campaign name</ng-template>
-        <mat-form-field>
-          <input matInput placeholder="Campaign Name" formControlName="firstCtrl" required>
-        </mat-form-field>
+    <br><br>
 
-        <div>
-          <button mat-button matStepperNext>Next</button>
-        </div>
+    <ng-template>Define the kind of sensor</ng-template>
 
-      </form>
-    </mat-step>
+    <mat-radio-group>
+      <mat-radio-button value="1">three answers box</mat-radio-button>
 
+      <div class="spacer"></div>
 
+      <mat-radio-button value="2">five answers box</mat-radio-button>
+    </mat-radio-group>
 
-    <mat-step [stepControl]="thirdFormGroup">
-      <form [formGroup]="thirdFormGroup">
-        <ng-template matStepLabel>Define the kind of sensor</ng-template>
+    <br><br>
 
-        <mat-radio-group>
-          <mat-radio-button value="1">three answers box</mat-radio-button>
+    <ng-template>Fill out the possible responses</ng-template>
 
-          <div class="spacer"></div>
+    <mat-form-field class="full-width-input">
+      <input matInput placeholder="response 1" formControlName="response1" required></mat-form-field>
 
-          <mat-radio-button value="2">five answers box</mat-radio-button>
-        </mat-radio-group>
+    <mat-form-field class="full-width-input">
+      <input matInput placeholder="response 2" formControlName="response2" required> </mat-form-field>
 
-      </form>
-    </mat-step>
+    <mat-form-field class="full-width-input">
+      <input matInput placeholder="response 3" formControlName="response3" required></mat-form-field>
 
-    <mat-step [stepControl]="fourthFormGroup">
-      <form [formGroup]="fourthFormGroup">
-        <ng-template matStepLabel>Fill out the possible responses</ng-template>
+    <mat-form-field class="full-width-input">
+      <input matInput placeholder="response 4" formControlName="response4" required></mat-form-field>
 
-        <mat-form-field class="full-width-input">
-          <input matInput placeholder="response 1" formControlName="response1" required></mat-form-field>
+    <mat-form-field class="full-width-input">
+      <input matInput placeholder="response 5" formControlName="response5" required></mat-form-field>
 
-        <mat-form-field class="full-width-input">
-          <input matInput placeholder="response 2" formControlName="response2" required> </mat-form-field>
+    <br>
 
-        <mat-form-field class="full-width-input">
-          <input matInput placeholder="response 3" formControlName="response3" required></mat-form-field>
+    <ng-template>Done</ng-template>
+    You are now done.
+    <br>
+    <div>
+      <button mat-button>Back</button>
+      <button mat-button (click)="stepper.reset()">Reset</button>
+    </div>
+    <br>
+    <div>
+      <button mat-button (click)="submit()">Next</button>
+    </div>
+  </form>
 
-        <mat-form-field class="full-width-input">
-          <input matInput placeholder="response 4" formControlName="response4" required></mat-form-field>
-
-        <mat-form-field class="full-width-input">
-          <input matInput placeholder="response 5" formControlName="response5" required></mat-form-field>
-
-        <div>
-          <button mat-button matStepperNext>Next</button>
-        </div>
-
-      </form>
-    </mat-step>
-
-    <mat-step [stepControl]="fourthFormGroup">
-      <form [formGroup]="fourthFormGroup">
-        <ng-template matStepLabel>Done</ng-template>
-        You are now done.
-        <br>
-        <br>
-
-        <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button (click)="stepper.reset()">Reset</button>
-        </div>
-
-        <br>
-        <br>
-        <br>
-
-        <div>
-          <button mat-button matStepperNext (click)="submit()">Next</button>
-        </div>
-      </form>
-    </mat-step>
-  </mat-vertical-stepper>
 
 
 
@@ -101,31 +69,26 @@
     <h1> New Campaign Name : </h1>
 
 
-    <mat-vertical-stepper *ngIf="isNext" [linear]="isLinear" #stepper>
 
-      <mat-step [stepControl]="FormGroupA">
-        <form [formGroup]="FormGroupA">
 
-          <ng-template matStepLabel>Fill out the period</ng-template>
+    <!-- <mat-step [stepControl]="FormGroupA"> -->
+    <form [formGroup]="FormGroupA">
 
-          <mat-form-field>
-            <input formControlName="calendar1" required matInput [matDatepicker]="picker1" placeholder="Start date">
-            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
-            <mat-datepicker #picker1></mat-datepicker>
-          </mat-form-field>
+      <ng-template>Fill out the period</ng-template>
 
-          <div class="spacer"></div>
+      <mat-form-field>
+        <input formControlName="calendar1" required matInput [matDatepicker]="picker1" placeholder="Start date">
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+      </mat-form-field>
 
-          <mat-form-field>
-            <input formControlName="calendar2" required matInput [matDatepicker]="picker2" placeholder="End date">
-            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-            <mat-datepicker #picker2></mat-datepicker>
-          </mat-form-field>
+      <div class="spacer"></div>
 
-          <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>Next</button>
-          </div>
+      <mat-form-field>
+        <input formControlName="calendar2" required matInput [matDatepicker]="picker2" placeholder="End date">
+        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
+      </mat-form-field>
 
-        </form>
-      </mat-step>
+    </form>
+  </div>

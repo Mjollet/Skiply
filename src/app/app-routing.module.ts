@@ -8,11 +8,7 @@ const routes: Routes = [
 
   { path: 'campaign', loadChildren: './views/campaign/campaign.module#CampaignModule' },
 
-  { path: 'details', loadChildren: './views/details/details.module#DetailsModule' },
-
-  { path: 'result', loadChildren: './views/result/result.module#ResultModule' },
-
-  { path: 'battery', loadChildren: './views/battery/battery.module#BatteryModule' }
+  { path: 'result', loadChildren: './views/result/result.module#ResultModule' }
 ];
 
 @NgModule({

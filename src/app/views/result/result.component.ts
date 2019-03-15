@@ -53,6 +53,7 @@ export class ResultComponent implements OnInit {
           borderWidth: 1
         }]
       },
+      // Changer de taille, aller dans la doc
       options: {
         scales: {
           // xAxes: [{
