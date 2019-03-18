@@ -6,9 +6,10 @@
     <h2>Welcome to Feedback </h2>
 
     <!-- Campaign list -->
-    <div class="campaigns campaigns-text" *ngFor="let campaign of campaigns"
-      [class.selected]="campaign === selectedCampaign" (click)="onSelect(campaign)">
+    <div class="table table-text" *ngFor="let campaign of campaigns" [class.selected]="campaign === selectedCampaign"
+      (click)="onSelect(campaign)">
       <span class="badge"> {{campaign.id}}</span>{{campaign.name}}
+      <button (click)="resultgate()"> Results></button>
     </div>
   </div>
 
@@ -16,22 +17,49 @@
   <div *ngIf="selectedCampaign">
     <button (click)="selectedCampaignRaz()">Retour</button>
 
-    <h2>{{selectedCampaign.name | uppercase}} Details</h2>
+    <h2>{{selectedCampaign.name | uppercase}} details</h2>
     <div><span>id: </span>{{selectedCampaign.id}}</div>
-    <div>
-      <label>name:
+
+    <div class="table-campaign">
+      <!-- <label>name:
         <input [(ngModel)]="selectedCampaign.name" placeholder="name" />
-      </label>
+      </label> -->
       <h2>Campaign places </h2>
+      <div class="table table-text"><span>
+          <table>
+            <tr *ngFor="let place of selectedCampaign.places">
+              <td>{{place}}</td>
+            </tr>
+          </table>
+        </span></div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
       <h2>Linked sensors</h2>
+      <div class="table table-text"><span>
+          <table>
+            <tr *ngFor="let sensors of selectedCampaign.sensors">
+              <td>{{sensors}}</td>
+            </tr>
+          </table>
+        </span></div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
 
       <!-- Next button -->
-      <button (click)="resultway()">Results</button>
-
       <a routerLink="/result"><button (click)="resultway()"> Results of this campaign></button></a>
     </div>
 
-
+    <br>
+    <br>
+    <br>
 
   </div>
 

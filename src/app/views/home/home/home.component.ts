@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CAMPAIGN } from './mock-list';
 import { Campaign } from 'src/app/shared/class/campaign';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -15,7 +16,8 @@ export class HomeComponent implements OnInit {
 
   isclick: boolean;
 
-  constructor() { }
+  // Initialiser les boutons
+  constructor(private router: Router) { }
 
 
   ngOnInit() {
@@ -35,8 +37,16 @@ export class HomeComponent implements OnInit {
       console.log('selectedCampaign not valid');
     }
   }
+  // Les bouttons!!!
 
   selectedCampaignRaz() {
     this.selectedCampaign = null;
+  }
+
+  resultgate() {
+    // this.appelVersLeBackRecupResult(idcampaign) => Resultat
+    // this.router.navigate(['results']);
+    this.router.navigate(['results']);
+
   }
 }

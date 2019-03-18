@@ -2,27 +2,27 @@
 
   <h1> Define your new campaign </h1>
 
-  <form [formGroup]="firstFormGroup">
-    <ng-template>Fill out your campaign name</ng-template>
+  <form [formGroup]="formGroupA">
     <mat-form-field>
-      <input matInput placeholder="Campaign Name" formControlName="firstCtrl" required>
+      <input matInput placeholder="Campaign Name" formControlName="campainNameCrtl" required>
     </mat-form-field>
 
     <br><br>
 
     <ng-template>Define the kind of sensor</ng-template>
 
-    <mat-radio-group>
-      <mat-radio-button value="1">three answers box</mat-radio-button>
+    <mat-radio-group formControlName="typeSensor">
+      <mat-radio-button value="sensorType3">three answers box</mat-radio-button>
 
       <div class="spacer"></div>
 
-      <mat-radio-button value="2">five answers box</mat-radio-button>
+      <mat-radio-button value="sensorType5">five answers box</mat-radio-button>
     </mat-radio-group>
 
     <br><br>
 
     <ng-template>Fill out the possible responses</ng-template>
+
 
     <mat-form-field class="full-width-input">
       <input matInput placeholder="response 1" formControlName="response1" required></mat-form-field>
@@ -33,11 +33,15 @@
     <mat-form-field class="full-width-input">
       <input matInput placeholder="response 3" formControlName="response3" required></mat-form-field>
 
-    <mat-form-field class="full-width-input">
-      <input matInput placeholder="response 4" formControlName="response4" required></mat-form-field>
+    <div *ngIf="!isType3">
+      <mat-form-field class="full-width-input">
+        <input matInput placeholder="response 4" formControlName="response4"></mat-form-field>
 
-    <mat-form-field class="full-width-input">
-      <input matInput placeholder="response 5" formControlName="response5" required></mat-form-field>
+      <mat-form-field class="full-width-input">
+        <input matInput placeholder="response 5" formControlName="response5"></mat-form-field>
+    </div>
+
+
 
     <br>
 
@@ -52,43 +56,40 @@
     <div>
       <button mat-button (click)="submit()">Next</button>
     </div>
+    <br>
+    <br>
   </form>
 
 
+  <div *ngIf="isNext">
+
+    <div class="contener">
+
+      <h1> New Campaign Name : </h1>
 
 
 
 
+      <!-- <mat-step [stepControl]="FormGroupA"> -->
+      <form [formGroup]="formGroupB">
 
-</div>
+        <ng-template>Fill out the period</ng-template>
 
-<div *ngIf="isNext">
+        <mat-form-field>
+          <input formControlName="calendar1" required matInput [matDatepicker]="picker1" placeholder="Start date">
+          <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
 
-  <div class="contener">
+        <div class="spacer"></div>
 
-    <h1> New Campaign Name : </h1>
+        <mat-form-field>
+          <input formControlName="calendar2" required matInput [matDatepicker]="picker2" placeholder="End date">
+          <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+          <mat-datepicker #picker2></mat-datepicker>
+        </mat-form-field>
 
-
-
-
-    <!-- <mat-step [stepControl]="FormGroupA"> -->
-    <form [formGroup]="FormGroupA">
-
-      <ng-template>Fill out the period</ng-template>
-
-      <mat-form-field>
-        <input formControlName="calendar1" required matInput [matDatepicker]="picker1" placeholder="Start date">
-        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
-        <mat-datepicker #picker1></mat-datepicker>
-      </mat-form-field>
-
-      <div class="spacer"></div>
-
-      <mat-form-field>
-        <input formControlName="calendar2" required matInput [matDatepicker]="picker2" placeholder="End date">
-        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-        <mat-datepicker #picker2></mat-datepicker>
-      </mat-form-field>
-
-    </form>
+      </form>
+    </div>
   </div>
+</div>

@@ -23,6 +23,11 @@ export class ResultComponent implements OnInit {
           label: 'BUMS/J'
         }]
       },
+      options: {
+        onResize: 0,
+        responsive: true,
+        maintainAspectRatio: false
+      }
     });
 
 
