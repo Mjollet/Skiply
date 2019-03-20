@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home/home.component';
+import { DetailsComponent } from './details/details.component';
 import {
   MatDatepickerModule, MatFormFieldModule, MatNativeDateModule, MatInputModule
 } from '@angular/material';
@@ -11,7 +12,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 
 
 @NgModule({
-  declarations: [HomeComponent],
+  declarations: [HomeComponent, DetailsComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,

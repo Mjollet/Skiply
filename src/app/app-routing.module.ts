@@ -6,6 +6,8 @@ const routes: Routes = [
 
   { path: 'home', loadChildren: './views/home/home.module#HomeModule' },
 
+  { path: 'details', loadChildren: './views/details/details.module#DetailsModule' },
+
   { path: 'campaign', loadChildren: './views/campaign/campaign.module#CampaignModule' },
 
   { path: 'result', loadChildren: './views/result/result.module#ResultModule' }

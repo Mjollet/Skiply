@@ -13,51 +13,6 @@
       <a routerLink="/result"><button class="resultbutton" (click)="resultgate()"> Results></button></a>
     </div>
 
-    <!-- Campaign details after click -->
-    <div *ngIf="selectedCampaign">
-      <button (click)="selectedCampaignRaz()">Retour</button>
-
-      <h2>{{selectedCampaign.name | uppercase}} details</h2>
-      <div><span>id: </span>{{selectedCampaign.id}}</div>
-
-      <div class="table-campaign">
-        <h2>Campaign places </h2>
-      </div>
-
-      <div class="table table-text">
-
-        <table>
-          <tr *ngFor="let place of selectedCampaign.places">
-            <td>{{place}}</td>
-          </tr>
-        </table>
-      </div>
-
-      <br>
-
-
-      <div class="table-campaign">
-        <h2>Linked sensors</h2>
-      </div>
-
-      <div class="table table-text"><span>
-
-          <table>
-            <tr *ngFor="let sensors of selectedCampaign.sensors">
-              <td>{{sensors}}</td>
-            </tr>
-          </table>
-        </span></div>
-
-      <br>
-
-      <!-- Next button -->
-      <a routerLink="/result"><button (click)="resultway()"> Results of this campaign></button></a>
-    </div>
-
-    <!-- <br>
-    <br>
-    <br> -->
 
 
     <!-- Possibility in app -->
