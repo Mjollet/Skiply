@@ -47,6 +47,5 @@ export class HomeComponent implements OnInit {
     // this.appelVersLeBackRecupResult(idcampaign) => Resultat
     // this.router.navigate(['results']);
     this.router.navigate(['results']);
-
   }
 }
